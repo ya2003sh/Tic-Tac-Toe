@@ -1,0 +1,96 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.game-board{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+}
+
+.cell{
+    height: 100px;
+    width: 100px;
+    border: 2px solid #0909ad;
+    font-size: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.cell.X{
+    color: #09aecb;
+}
+.cell.O{
+    color: #e50c35;
+}
+
+.cell:nth-child(1),.cell:nth-child(2),.cell:nth-child(3){
+    border-top: none;
+}
+
+.cell:nth-child(3n + 1){
+    border-left: none;
+}
+
+.cell:nth-child(3n){
+    border-right: none;
+}
+
+.cell:nth-child(7),.cell:nth-child(8),.cell:nth-child(9){
+    border-bottom: none;
+}
+
+.result{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99;
+    background: rgb(0,0,0,0.5);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.result h1{
+    color: #fff;
+    font-size: 50px;
+    background: rgb(0,0,100,0.5);
+    padding: 15px 25px;
+}
+
+.result button{
+    font-size: 36px;
+    background: #0909ad;
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 10px 25px;
+}
+
+.inactive{
+    display: none;
+}
+
+.disabled{
+    pointer-events: none;
+}
+
+
+
